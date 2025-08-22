@@ -70,18 +70,18 @@ export default function MembersPage() {
 
   const filteredMembers = members.filter((member: any) => {
     const matchesSearch = member.namaLengkap.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesRayon = !rayonFilter || member.district.id === rayonFilter;
-    const matchesBaptis = !baptisFilter || member.statusBaptis === baptisFilter;
-    const matchesPerjamuan = !perjamuanFilter || member.statusPerjamuan === perjamuanFilter;
+    const matchesRayon = !rayonFilter || rayonFilter === "all" || member.district.id === rayonFilter;
+    const matchesBaptis = !baptisFilter || baptisFilter === "all" || member.statusBaptis === baptisFilter;
+    const matchesPerjamuan = !perjamuanFilter || perjamuanFilter === "all" || member.statusPerjamuan === perjamuanFilter;
     
     return matchesSearch && matchesRayon && matchesBaptis && matchesPerjamuan;
   });
 
   const resetFilters = () => {
     setSearchTerm("");
-    setRayonFilter("");
-    setBaptisFilter("");
-    setPerjamuanFilter("");
+    setRayonFilter("all");
+    setBaptisFilter("all");
+    setPerjamuanFilter("all");
   };
 
   const handleEdit = (member: any) => {
@@ -165,7 +165,7 @@ export default function MembersPage() {
                     <SelectValue placeholder="Semua Rayon" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Semua Rayon</SelectItem>
+                    <SelectItem value="all">Semua Rayon</SelectItem>
                     {districts.map((district: any) => (
                       <SelectItem key={district.id} value={district.id}>
                         {district.name}
@@ -182,7 +182,7 @@ export default function MembersPage() {
                     <SelectValue placeholder="Semua Status" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Semua Status</SelectItem>
+                    <SelectItem value="all">Semua Status</SelectItem>
                     <SelectItem value="SUDAH">Sudah Baptis</SelectItem>
                     <SelectItem value="BELUM">Belum Baptis</SelectItem>
                   </SelectContent>
@@ -196,7 +196,7 @@ export default function MembersPage() {
                     <SelectValue placeholder="Semua Status" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Semua Status</SelectItem>
+                    <SelectItem value="all">Semua Status</SelectItem>
                     <SelectItem value="SUDAH">Sudah Perjamuan</SelectItem>
                     <SelectItem value="BELUM">Belum Perjamuan</SelectItem>
                   </SelectContent>

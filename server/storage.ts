@@ -241,7 +241,11 @@ export class MemStorage implements IStorage {
     const existing = this.districts.get(id);
     if (!existing) return undefined;
     
-    const updated: District = { ...existing, ...district };
+    const updated: District = { 
+      ...existing, 
+      ...district,
+      description: district.description ?? existing.description
+    };
     this.districts.set(id, updated);
     return updated;
   }
@@ -353,7 +357,15 @@ export class MemStorage implements IStorage {
     const existing = this.members.get(id);
     if (!existing) return undefined;
     
-    const updated: Member = { ...existing, ...member };
+    const updated: Member = { 
+      ...existing, 
+      ...member,
+      tempatLahir: member.tempatLahir ?? existing.tempatLahir,
+      tanggalLahir: member.tanggalLahir ?? existing.tanggalLahir,
+      pendidikan: member.pendidikan ?? existing.pendidikan,
+      pekerjaan: member.pekerjaan ?? existing.pekerjaan,
+      keterangan: member.keterangan ?? existing.keterangan
+    };
     this.members.set(id, updated);
     return updated;
   }

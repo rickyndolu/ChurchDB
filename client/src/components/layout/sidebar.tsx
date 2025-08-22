@@ -34,10 +34,10 @@ export default function Sidebar() {
           
           return (
             <Link key={item.name} href={item.href}>
-              <a
+              <div
                 data-testid={`nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                 className={cn(
-                  "group flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors",
+                  "group flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors cursor-pointer",
                   isActive
                     ? "text-primary-700 bg-primary-50"
                     : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
@@ -48,7 +48,7 @@ export default function Sidebar() {
                   isActive ? "text-primary-600" : "text-gray-400 group-hover:text-gray-500"
                 )} />
                 {item.name}
-              </a>
+              </div>
             </Link>
           );
         })}

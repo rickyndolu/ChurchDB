@@ -126,6 +126,7 @@ export default function DistrictForm({ district, onClose }: DistrictFormProps) {
               <FormControl>
                 <Textarea 
                   {...field} 
+                  value={field.value || ""}
                   rows={3}
                   placeholder="Deskripsi rayon (opsional)"
                   data-testid="textarea-district-description"

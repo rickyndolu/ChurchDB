@@ -186,7 +186,7 @@ export default function MemberForm({ member, onClose }: MemberFormProps) {
                   <FormItem>
                     <FormLabel>Tempat Lahir</FormLabel>
                     <FormControl>
-                      <Input {...field} data-testid="input-tempat-lahir" />
+                      <Input {...field} value={field.value || ""} data-testid="input-tempat-lahir" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -244,7 +244,6 @@ export default function MemberForm({ member, onClose }: MemberFormProps) {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="">-</SelectItem>
                         <SelectItem value="SD">SD</SelectItem>
                         <SelectItem value="SMP">SMP</SelectItem>
                         <SelectItem value="SMA">SMA</SelectItem>
@@ -266,7 +265,7 @@ export default function MemberForm({ member, onClose }: MemberFormProps) {
                   <FormItem>
                     <FormLabel>Pekerjaan</FormLabel>
                     <FormControl>
-                      <Input {...field} placeholder="Contoh: Guru, Petani, dll" data-testid="input-pekerjaan" />
+                      <Input {...field} value={field.value || ""} placeholder="Contoh: Guru, Petani, dll" data-testid="input-pekerjaan" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -456,6 +455,7 @@ export default function MemberForm({ member, onClose }: MemberFormProps) {
                   <FormControl>
                     <Textarea 
                       {...field} 
+                      value={field.value || ""}
                       rows={3}
                       placeholder="Contoh: Disabilitas, Mahasiswa, Pensiunan, dll"
                       data-testid="textarea-keterangan"
