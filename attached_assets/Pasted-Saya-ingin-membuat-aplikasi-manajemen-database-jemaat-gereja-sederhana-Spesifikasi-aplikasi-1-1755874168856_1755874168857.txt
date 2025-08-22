@@ -1,0 +1,59 @@
+Saya ingin membuat aplikasi manajemen database jemaat gereja sederhana.  
+Spesifikasi aplikasi:  
+
+1. **Stack Teknologi**
+   - Backend: Node.js + Express
+   - Database: SQLite (atau MySQL jika mudah di Replit)
+   - Frontend: React dengan Tailwind CSS
+   - Autentikasi sederhana (admin login)
+   - API berbasis REST (CRUD jemaat, KK, rayon)
+
+2. **Struktur Data**
+   Setiap jemaat memiliki atribut berikut:
+   - ID
+   - Nama lengkap
+   - Tempat lahir
+   - Tanggal lahir
+   - Jenis kelamin (LAKI-LAKI / PEREMPUAN)
+   - Status Baptis (SUDAH / BELUM)
+   - Status Sidi (SUDAH / BELUM)
+   - Peran dalam keluarga (KEPALA KELUARGA / ISTRI / ANAK)
+   - Status perkawinan (MENIKAH / JANDA / DUDA / BELUM)
+   - Pendidikan terakhir
+   - Pekerjaan
+   - Status Perjamuan (SUDAH / BELUM)
+   - Keterangan tambahan (Disabilitas, Mahasiswa, Pensiunan, dll)
+
+3. **Relasi**
+   - Jemaat tergabung dalam **Keluarga (KK)**
+   - KK tergabung dalam **Rayon**
+   - Jadi relasi: Rayon → KK → Jemaat
+
+4. **Fitur**
+   - Admin dapat login
+   - Admin dapat menambah, mengedit, menghapus data jemaat
+   - Data dapat difilter berdasarkan rayon, KK, pendidikan, pekerjaan, status perjamuan
+   - Tabel jemaat dengan fitur search
+   - Input data jemaat menggunakan form
+   - Tampilkan jumlah jemaat per rayon dan total jemaat
+   - Ekspor ke CSV
+
+5. **Sample Data Awal**
+   Mohon isi database awal dengan contoh data jemaat berikut:
+
+   - (1) Yohanis B. Ndolu, Lahir: Nusaklain, 26 Januari 1963, Laki-laki, Baptis: SUDAH, Sidi: SUDAH, Kepala Keluarga, Pendidikan: SMA, Pekerjaan: Wirausaha, Perjamuan: SUDAH, Keterangan: Disabilitas  
+   - (2) Selfince Tulle, Lahir: Papela, 15 Februari 1971, Perempuan, Baptis: SUDAH, Sidi: SUDAH, Istri, Pendidikan: SMP, Pekerjaan: Ibu Rumah Tangga, Perjamuan: SUDAH  
+   - (3) Rudy B. Ndolu, Lahir: Rote, 25 Februari 1997, Laki-laki, Baptis: SUDAH, Sidi: SUDAH, Anak, Pendidikan: S1, Pekerjaan: -, Perjamuan: BELUM  
+   - (4) Ricky Ndolu, Lahir: Nusaklain, 19 Mei 1991, Laki-laki, Baptis: SUDAH, Sidi: SUDAH, Kepala Keluarga, Pendidikan: S1, Pekerjaan: Wirausaha, Perjamuan: SUDAH  
+   - (5) Claudia Rambu Kareri, Lahir: Kupang, 8 Oktober 1991, Perempuan, Baptis: SUDAH, Sidi: SUDAH, Istri, Pendidikan: SMA, Pekerjaan: Wirausaha, Perjamuan: SUDAH  
+   (dst. isi dengan minimal 10–15 jemaat sesuai daftar yang saya berikan)
+
+6. **UI/UX**
+   - Halaman login admin
+   - Dashboard menampilkan statistik jemaat (total jemaat, total KK, total rayon)
+   - Menu: Data Jemaat, Data KK, Data Rayon
+   - Tabel interaktif dengan search dan filter
+   - Form tambah/edit jemaat
+   - Tampilan sederhana tapi rapi (gunakan Tailwind + shadcn/ui)
+
+Silakan buat kode lengkap (backend + frontend) agar bisa langsung dijalankan di Replit.
